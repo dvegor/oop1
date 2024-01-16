@@ -13,10 +13,10 @@ namespace ConsoleApp1
         Male,
         Female
     }
-    public class FamilyMember
+    public class Humans
     {
-        public FamilyMember Mother { get; set; }
-        public FamilyMember Father { get; set; }
+        public Humans Mother { get; set; }
+        public Humans Father { get; set; }
         public string Name { get; set; }
         public Gender Sex { get; set; }
 
@@ -35,26 +35,7 @@ namespace ConsoleApp1
         Console.WriteLine($"Father: {Father?.Name}");
     }
 
-    string PrintFather()
-    {
-        return $" Отец = \n" +
-            $" {Father} ";
-    }
 
-    string PrintMother()
-    {
-        return $"Мать = {Mother}";
-    }
-
-    public class AdultFamilyMember : FamilyMember 
-    {
-        public FamilyMember[] Children {  get; set; }
-            public override void Print (int indent = 0)
-            {
-                base.Print (indent);
-                foreach (var child in Children)
-                    child.Print(indent * 2);
-            }
-    }
+ 
 }
 }
